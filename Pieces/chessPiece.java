@@ -1,9 +1,14 @@
 package Pieces;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 import Util.GridPoint;
+import java.awt.Image;
 
 public class chessPiece {
     public enum MovementPattern {
@@ -11,8 +16,8 @@ public class chessPiece {
                 new GridPoint(-1, 1) }, true),
         STRAIGHT(new GridPoint[] { new GridPoint(0, 1), new GridPoint(1, 0), new GridPoint(0, -1),
                 new GridPoint(-1, 0) }, true),
-        KNIGHT(new GridPoint[] { new GridPoint(1, 2), new GridPoint(-1, 2), new GridPoint(2, 1), new GridPoint(2, -1),
-                new GridPoint(1, -2), new GridPoint(-1, -2), new GridPoint(-2, 1), new GridPoint(-2, -1) }, false),
+        KNIGHT(new GridPoint[] { new GridPoint(1, 3), new GridPoint(-1, 3), new GridPoint(3, 1), new GridPoint(3, -1),
+                new GridPoint(1, -3), new GridPoint(-1, -3), new GridPoint(-3, 1), new GridPoint(-3, -1) }, false),
         PAWN(new GridPoint[] { new GridPoint(0, 1) }, false), // Pawn movement is special and will need to be fixed
                                                               // later
         KING(new GridPoint[] { new GridPoint(0, 1), new GridPoint(1, 1), new GridPoint(1, 0), new GridPoint(1, -1),
@@ -44,6 +49,8 @@ public class chessPiece {
     public PieceType pieceType;
     public GridPoint currentPoint;
     public Color color;
+    public int imgWidth = 75;
+    public int imgHeight = 75;
 
     public boolean isWhite() {
         return color == Color.WHITE;
@@ -62,10 +69,10 @@ public class chessPiece {
                         nextPoint = nextPoint.plus(gridPoint);
                     }
                 }
-                
+
             } else {
                 for (GridPoint gridPoint : movementPattern.ValidMoves) {
-                    if (currentPoint.plus(gridPoint).inBoard()){
+                    if (currentPoint.plus(gridPoint).inBoard()) {
                         validMoves.add(currentPoint.plus(gridPoint));
                     }
                 }
@@ -73,6 +80,12 @@ public class chessPiece {
 
         }
         return validMoves;
+    }
+
+    public JLabel createResizedLabel(URL imageURL, int width, int height) {
+        ImageIcon originalIcon = new ImageIcon(imageURL);
+        Image resizedImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new JLabel(new ImageIcon(resizedImage));
     }
 
 }
