@@ -1,9 +1,14 @@
 package Pieces;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 import Util.GridPoint;
+import java.awt.Image;
 
 public class chessPiece {
     public enum MovementPattern {
@@ -73,6 +78,11 @@ public class chessPiece {
 
         }
         return validMoves;
+    }
+    public JLabel createResizedLabel(URL imageURL, int width, int height) {
+        ImageIcon originalIcon = new ImageIcon(imageURL);
+        Image resizedImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new JLabel(new ImageIcon(resizedImage));
     }
 
 }
