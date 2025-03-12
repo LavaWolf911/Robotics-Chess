@@ -8,8 +8,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Bishop extends chessPiece {
-    private String name;
-    private JLabel peiceIMG;
 
     public Bishop(Color color, GridPoint startingPosition, JPanel[][] squares, String name) {
         movementPatterns.add(MovementPattern.DIAGONAL);
@@ -17,6 +15,17 @@ public class Bishop extends chessPiece {
         this.pieceType = PieceType.BISHOP;
         this.color = color;
         this.currentPoint = startingPosition;
+        try {
+            if (isWhite()) {
+                this.peiceIMG = createResizedLabel(PieceConstants.imageURLS.wBishop.toURL(), 75, 75);
+            } else {
+                this.peiceIMG = createResizedLabel(PieceConstants.imageURLS.bBishop.toURL(), 75, 75);
+
+            }
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         try {
             if (Color.BLACK == color) {
                 peiceIMG = createResizedLabel(PieceConstants.imageURLS.bBishop.toURL(), 75, 75);
@@ -36,28 +45,5 @@ public class Bishop extends chessPiece {
 
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public GridPoint getPose() {
-        return currentPoint;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public PieceType getPieceType() {
-        return pieceType;
-    }
-
-    public void movePeice(GridPoint newPose, JPanel[][] squares) {
-        if (getValidMoves().contains(newPose)) {
-            squares[getPose().getX()][getPose().getY()].remove(peiceIMG);
-            squares[newPose.getX()][newPose.getY()].add(peiceIMG);
-        } else {
-            System.out.println("Invalid move.");
-        }
-    }
 }

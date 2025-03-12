@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import Util.GridPoint;
 import java.awt.Image;
@@ -51,6 +52,8 @@ public class chessPiece {
     public Color color;
     public int imgWidth = 75;
     public int imgHeight = 75;
+    public String name;
+    public JLabel peiceIMG;
 
     public boolean isWhite() {
         return color == Color.WHITE;
@@ -86,6 +89,29 @@ public class chessPiece {
         ImageIcon originalIcon = new ImageIcon(imageURL);
         Image resizedImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new JLabel(new ImageIcon(resizedImage));
+    }
+    public GridPoint getPose() {
+        return currentPoint;
+    }
+    public String getName() {
+        return name;
+    }
+
+
+    public Color getColor() {
+        return color;
+    }
+
+    public JLabel getPeiceIMG() {
+        return peiceIMG;
+    }
+
+    public PieceType getPieceType() {
+        return pieceType;
+    }
+    public void movePeice(GridPoint newPose) {
+        currentPoint = newPose;
+        System.out.println("Moved to: " + newPose.getX() + " " + newPose.getY());
     }
 
 }

@@ -68,5 +68,16 @@ public class GridPoint {
     public String toString(){
         return "[" + getX() + "] [" + getY() + "]";
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof GridPoint)) {
+            return false;
+        }
+        GridPoint other = (GridPoint) obj;
+        return this.x == other.x && this.y == other.y;
+    }
 
 }

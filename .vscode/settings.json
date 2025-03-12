@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [],
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.6.7-hotspot"
+}
