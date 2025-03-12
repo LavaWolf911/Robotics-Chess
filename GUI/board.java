@@ -2,10 +2,17 @@
 package GUI;
 
 import java.awt.*;
+import java.awt.event.ContainerEvent;
+import java.awt.event.ContainerListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import Pieces.Rook;
+import Pieces.chessPiece.Color;
+import Util.GridPoint;
 
 public class board {
     Toolkit t = Toolkit.getDefaultToolkit();
@@ -84,7 +91,20 @@ public class board {
                 }
                 squares[i][j].setBounds(i * 100, j * 100, 100, 100);
                 f.add(squares[i][j]);
-                squares[i][j].addContainerListener();
+                squares[i][j].addContainerListener(new ContainerListener() {
+
+
+                    @Override
+                    public void componentAdded(ContainerEvent e) {
+                        // TODO Auto-generated method stub
+                        
+                    }
+
+                    @Override
+                    public void componentRemoved(ContainerEvent e) {
+                        // TODO Auto-generated method stub
+                    }
+                });
             }
         }
 
@@ -97,5 +117,19 @@ public class board {
         board b = new board();
         b.buildBoard();
         b.setPieces();
+        Rook r = new Rook(Color.WHITE, new GridPoint(5, 3));
+        for (GridPoint point : r.getValidMoves()) {
+            System.out.println(point.getX() + " " + point.getY());
+            getSquare(point).setBackground(java.awt.Color.RED);
+        }
+        System.err.println("Knight");
+        Pieces.Knight k = new Pieces.Knight(Color.WHITE, new GridPoint(0, 0));
+        for (GridPoint point : k.getValidMoves()) {
+            System.out.println(point.getX() + " " + point.getY());
+        }
+    }
+
+    public static JPanel getSquare(GridPoint point) {
+        return squares[point.getX()][7-point.getY()];
     }
 }

@@ -2,17 +2,12 @@ package Pieces;
 
 import Util.GridPoint;
 
-public class Bishop implements chessPiece {
-    public Bishop() {
+public class Bishop extends chessPiece {
+    public Bishop(Color color, GridPoint startingPosition){
+        movementPatterns.add(MovementPattern.DIAGONAL);
+        this.pieceType = PieceType.BISHOP;
+        this.color = color;
+        this.currentPoint = startingPosition;
 
-    }
-
-    @Override 
-    public boolean isWhite(){
-        return false;  
-    }
-    @Override
-    public GridPoint gridPoint() {
-        return new GridPoint(0,0);
     }
 }
