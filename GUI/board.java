@@ -10,10 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Pieces.Pawn;
-import Pieces.Queen;
 import Pieces.Rook;
-import Pieces.chessPiece;
 import Pieces.chessPiece.Color;
 import Util.GridPoint;
 
@@ -23,24 +20,23 @@ public class board {
     static JPanel[][] squares = new JPanel[8][8];
 
     ImageIcon whitePawn = new ImageIcon("PieceImages/wp.png");
-
-    // Defining Peices
-    static chessPiece whitePawn1 = new Pawn(Color.WHITE, new GridPoint(0, 1));
-    static chessPiece whitePawn2 = new Pawn(Color.WHITE, new GridPoint(1, 1));
-    static chessPiece whitePawn3 = new Pawn(Color.WHITE, new GridPoint(2, 1));
-    static chessPiece whitePawn4 = new Pawn(Color.WHITE, new GridPoint(3, 1));
-    static chessPiece whitePawn5 = new Pawn(Color.WHITE, new GridPoint(4, 1));
-    static chessPiece whitePawn6 = new Pawn(Color.WHITE, new GridPoint(5, 1));
-    static chessPiece whitePawn7 = new Pawn(Color.WHITE, new GridPoint(6, 1));
-    static chessPiece whitePawn8 = new Pawn(Color.WHITE, new GridPoint(7, 1));
-    static chessPiece whiteRook1 = new Rook(Color.WHITE, new GridPoint(0, 0));
-    static chessPiece whiteRook2 = new Rook(Color.WHITE, new GridPoint(7, 0));
-    static chessPiece whiteKnight1 = new Rook(Color.WHITE, new GridPoint(1, 0));
-    static chessPiece whiteKnight2 = new Rook(Color.WHITE, new GridPoint(6, 0));
-    static chessPiece whiteBishop1 = new Rook(Color.WHITE, new GridPoint(2, 0));
-    static chessPiece whiteBishop2 = new Rook(Color.WHITE, new GridPoint(5, 0));
-    static chessPiece whiteQueen = new Queen(Color.WHITE, new GridPoint(3, 0));
-    static chessPiece whiteKing = new Queen(Color.WHITE, new GridPoint(4, 0));
+    // Defining pawns
+    // Pawn wAPawn = new Pawn(new Pose2d(0,1));
+    // Pawn wBPawn = new Pawn(new Pose2d(1,1));
+    // Pawn wCPawn = new Pawn(new Pose2d(2,1));
+    // Pawn wDPawn = new Pawn(new Pose2d(3,1));
+    // Pawn wEPawn = new Pawn(new Pose2d(4,1));
+    // Pawn wFPawn = new Pawn(new Pose2d(5,1));
+    // Pawn wGPawn = new Pawn(new Pose2d(6,1));
+    // Pawn wHPawn = new Pawn(new Pose2d(7,1));
+    // Rook wARook = new Rook(new Pose2d(0,0));
+    // Rook wHRook = new Rook(new Pose2d(7,0));
+    // Knight wBKnight = new Knight(new Pose2d(1,0));
+    // Knight wGKnight = new Knight(new Pose2d(6,0));
+    // Bishop wCBishop = new Bishop(new Pose2d(2,0));
+    // Bishop wFBishop = new Bishop(new Pose2d(5,0));
+    // Queen wQueen = new Queen(new Pose2d(3,0));
+    // King wKing = new King(new Pose2d(4,0));
 
     public board() {
 
@@ -97,10 +93,11 @@ public class board {
                 f.add(squares[i][j]);
                 squares[i][j].addContainerListener(new ContainerListener() {
 
+
                     @Override
                     public void componentAdded(ContainerEvent e) {
                         // TODO Auto-generated method stub
-
+                        
                     }
 
                     @Override
@@ -116,23 +113,11 @@ public class board {
         f.setVisible(true);
     }
 
-    public static void resetBoard() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if ((i + j) % 2 == 0) {
-                    squares[i][j].setBackground(java.awt.Color.WHITE);
-                } else {
-                    squares[i][j].setBackground(java.awt.Color.BLACK);
-                }
-            }
-        }
-    }
-
     public static void main(String[] args) {
         board b = new board();
         b.buildBoard();
         b.setPieces();
-        chessPiece r = whiteQueen;
+        Rook r = new Rook(Color.WHITE, new GridPoint(5, 3));
         for (GridPoint point : r.getValidMoves()) {
             System.out.println(point.getX() + " " + point.getY());
             getSquare(point).setBackground(java.awt.Color.RED);
@@ -142,17 +127,9 @@ public class board {
         for (GridPoint point : k.getValidMoves()) {
             System.out.println(point.getX() + " " + point.getY());
         }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        resetBoard();
-
     }
 
     public static JPanel getSquare(GridPoint point) {
-        return squares[point.getX()][7 - point.getY()];
+        return squares[point.getX()][7-point.getY()];
     }
 }
