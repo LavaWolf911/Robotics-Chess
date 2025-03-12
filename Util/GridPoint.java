@@ -64,4 +64,9 @@ public class GridPoint {
         return this.x >= 0 && this.x < 8 && this.y >= 0 && this.y < 8;
     }
 
+    @Override
+    public String toString(){
+        return "[" + getX() + "] [" + getY() + "]";
+    }
+
 }

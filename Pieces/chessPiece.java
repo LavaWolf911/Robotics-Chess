@@ -16,8 +16,8 @@ public class chessPiece {
                 new GridPoint(-1, 1) }, true),
         STRAIGHT(new GridPoint[] { new GridPoint(0, 1), new GridPoint(1, 0), new GridPoint(0, -1),
                 new GridPoint(-1, 0) }, true),
-        KNIGHT(new GridPoint[] { new GridPoint(1, 2), new GridPoint(-1, 2), new GridPoint(2, 1), new GridPoint(2, -1),
-                new GridPoint(1, -2), new GridPoint(-1, -2), new GridPoint(-2, 1), new GridPoint(-2, -1) }, false),
+        KNIGHT(new GridPoint[] { new GridPoint(1, 3), new GridPoint(-1, 3), new GridPoint(3, 1), new GridPoint(3, -1),
+                new GridPoint(1, -3), new GridPoint(-1, -3), new GridPoint(-3, 1), new GridPoint(-3, -1) }, false),
         PAWN(new GridPoint[] { new GridPoint(0, 1) }, false), // Pawn movement is special and will need to be fixed
                                                               // later
         KING(new GridPoint[] { new GridPoint(0, 1), new GridPoint(1, 1), new GridPoint(1, 0), new GridPoint(1, -1),
@@ -49,6 +49,8 @@ public class chessPiece {
     public PieceType pieceType;
     public GridPoint currentPoint;
     public Color color;
+    public int imgWidth = 75;
+    public int imgHeight = 75;
 
     public boolean isWhite() {
         return color == Color.WHITE;

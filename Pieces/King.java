@@ -3,9 +3,14 @@ package Pieces;
 import Util.GridPoint;
 import Util.PieceConstants;
 import java.net.MalformedURLException;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class King extends chessPiece {
+    private String name;
+    private JLabel peiceIMG;
+
     public King(Color color, GridPoint startingPosition, JPanel[][] squares, String name) {
         this.currentPoint = startingPosition;
         movementPatterns.add(MovementPattern.KING);
@@ -24,6 +29,31 @@ public class King extends chessPiece {
             squares[startingPosition.getX()][startingPosition.getY()].repaint();
         } catch (MalformedURLException ex) {
             System.out.println("Error: " + ex.toString().trim() + " Please try again");
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public GridPoint getPose() {
+        return currentPoint;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public PieceType getPieceType() {
+        return pieceType;
+    }
+
+    public void movePeice(GridPoint newPose, JPanel[][] squares) {
+        if (getValidMoves().contains(newPose)) {
+            squares[getPose().getX()][getPose().getY()].remove(peiceIMG);
+            squares[newPose.getX()][newPose.getY()].add(peiceIMG);
+        } else {
+            System.out.println("Invalid move.");
         }
     }
 }

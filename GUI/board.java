@@ -153,6 +153,11 @@ public class board {
         f.setSize(815, 830);
         f.setLayout(null);
         f.setVisible(true);
+        // f.setVisible(false);
+        // System.out.println("\nCurrent Pose of (" + wBKnight.getName() + ")\n[" + wBKnight.getPose().getX() + "] [" + wBKnight.getPose().getY() + "]");
+        // System.out.println("\nAttempting to move " + wBKnight.getName() + " to [" + (wEPawn.getPose().getX()+3) + "] [" + (wEPawn.getPose().getY()) + "]\n");
+        // wBKnight.movePeice(new GridPoint(wEPawn.getPose().getX()+3,wEPawn.getPose().getY()-1), squares);
+        // f.setVisible(true);
 
     }
 
@@ -174,6 +179,7 @@ public class board {
         // for (GridPoint point : k.getValidMoves()) {
         // System.out.println(point.getX() + " " + point.getY());
         // }
+        
     }
 
     public static JPanel getSquare(GridPoint point) {
