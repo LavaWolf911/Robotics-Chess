@@ -67,10 +67,10 @@ public class chessPiece {
                         nextPoint = nextPoint.plus(gridPoint);
                     }
                 }
-                
+
             } else {
                 for (GridPoint gridPoint : movementPattern.ValidMoves) {
-                    if (currentPoint.plus(gridPoint).inBoard()){
+                    if (currentPoint.plus(gridPoint).inBoard()) {
                         validMoves.add(currentPoint.plus(gridPoint));
                     }
                 }
@@ -79,6 +79,7 @@ public class chessPiece {
         }
         return validMoves;
     }
+
     public JLabel createResizedLabel(URL imageURL, int width, int height) {
         ImageIcon originalIcon = new ImageIcon(imageURL);
         Image resizedImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);

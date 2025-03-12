@@ -53,46 +53,74 @@ public class board {
     public board() {
 
     }
-    
 
     public void setStartingPieces() throws MalformedURLException {
-    wAPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wAPawn, squares, "White Pawn [A]");
-     wBPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wBPawn, squares, "White Pawn [B]");
-     wCPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wCPawn, squares, "White Pawn [C]");
-     wDPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wDPawn, squares, "White Pawn [D]");
-     wEPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wEPawn, squares, "White Pawn [E]");
-     wFPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wFPawn, squares, "White Pawn [F]");
-     wGPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wGPawn, squares, "White Pawn [G]");
-     wHPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wHPawn, squares, "White Pawn [H]");
-     wARook = new Rook(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wARook, squares, "White Rook [A]");
-     wHRook = new Rook(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wHRook, squares, "White Rook [H]");
-     wBKnight = new Knight(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wBKnight, squares, "White Knight [B]");
-     wGKnight = new Knight(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wGKnight, squares, "White Knight [G]");
-     wCBishop = new Bishop(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wCBishop, squares, "White Bishop [C]");
-     wFBishop = new Bishop(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wFBishop, squares, "White Bishop [F]");
-     wQueen = new Queen(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wQueen, squares, "White Queen");
-     wKing = new King(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wKing, squares, "White King");
+        wAPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wAPawn, squares,
+                "White Pawn [A]");
+        wBPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wBPawn, squares,
+                "White Pawn [B]");
+        wCPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wCPawn, squares,
+                "White Pawn [C]");
+        wDPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wDPawn, squares,
+                "White Pawn [D]");
+        wEPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wEPawn, squares,
+                "White Pawn [E]");
+        wFPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wFPawn, squares,
+                "White Pawn [F]");
+        wGPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wGPawn, squares,
+                "White Pawn [G]");
+        wHPawn = new Pawn(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wHPawn, squares,
+                "White Pawn [H]");
+        wARook = new Rook(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wARook, squares,
+                "White Rook [A]");
+        wHRook = new Rook(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wHRook, squares,
+                "White Rook [H]");
+        wBKnight = new Knight(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wBKnight, squares,
+                "White Knight [B]");
+        wGKnight = new Knight(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wGKnight, squares,
+                "White Knight [G]");
+        wCBishop = new Bishop(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wCBishop, squares,
+                "White Bishop [C]");
+        wFBishop = new Bishop(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wFBishop, squares,
+                "White Bishop [F]");
+        wQueen = new Queen(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wQueen, squares,
+                "White Queen");
+        wKing = new King(Pieces.chessPiece.Color.WHITE, PieceConstants.startingPosition.wKing, squares, "White King");
 
-     bAPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bAPawn, squares, "Black Pawn [A]");
-     bBPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bBPawn, squares, "Black Pawn [B]");
-     bCPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bCPawn, squares, "Black Pawn [C]");
-     bDPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bDPawn, squares, "Black Pawn [D]");
-     bEPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bEPawn, squares, "Black Pawn [E]");
-     bFPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bFPawn, squares, "Black Pawn [F]");
-     bGPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bGPawn, squares, "Black Pawn [G]");
-     bHPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bHPawn, squares, "Black Pawn [H]");
-     bARook = new Rook(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bARook, squares, "Black Rook [A]");
-     bHRook = new Rook(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bHRook, squares, "Black Rook [H]");
-     bBKnight = new Knight(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bBKnight, squares, "Black Knight [B]");
-     bGKnight = new Knight(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bGKnight, squares, "Black Knight [G]");
-     bCBishop = new Bishop(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bCBishop, squares, "Black Bishop [C]");
-     bFBishop = new Bishop(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bFBishop, squares, "Black Bishop [F]");
-     bQueen = new Queen(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bQueen, squares, "Black Queen");
-     bKing = new King(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bKing, squares, "Black King");
+        bAPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bAPawn, squares,
+                "Black Pawn [A]");
+        bBPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bBPawn, squares,
+                "Black Pawn [B]");
+        bCPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bCPawn, squares,
+                "Black Pawn [C]");
+        bDPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bDPawn, squares,
+                "Black Pawn [D]");
+        bEPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bEPawn, squares,
+                "Black Pawn [E]");
+        bFPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bFPawn, squares,
+                "Black Pawn [F]");
+        bGPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bGPawn, squares,
+                "Black Pawn [G]");
+        bHPawn = new Pawn(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bHPawn, squares,
+                "Black Pawn [H]");
+        bARook = new Rook(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bARook, squares,
+                "Black Rook [A]");
+        bHRook = new Rook(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bHRook, squares,
+                "Black Rook [H]");
+        bBKnight = new Knight(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bBKnight, squares,
+                "Black Knight [B]");
+        bGKnight = new Knight(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bGKnight, squares,
+                "Black Knight [G]");
+        bCBishop = new Bishop(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bCBishop, squares,
+                "Black Bishop [C]");
+        bFBishop = new Bishop(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bFBishop, squares,
+                "Black Bishop [F]");
+        bQueen = new Queen(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bQueen, squares,
+                "Black Queen");
+        bKing = new King(Pieces.chessPiece.Color.BLACK, PieceConstants.startingPosition.bKing, squares, "Black King");
     }
 
     // Helper method to create a resized JLabel
-    
 
     public void buildBoard() throws MalformedURLException {
         for (int i = 0; i < 8; i++) {
@@ -121,10 +149,11 @@ public class board {
             }
         }
         // setStartingPieces();
-        setStartingPieces();        
+        setStartingPieces();
         f.setSize(815, 830);
         f.setLayout(null);
         f.setVisible(true);
+
     }
 
     public static void main(String[] args) {
@@ -137,13 +166,13 @@ public class board {
         }
         // Rook r = new Rook(Color.WHITE, new GridPoint(5, 3));
         // for (GridPoint point : r.getValidMoves()) {
-        //     System.out.println(point.getX() + " " + point.getY());
-        //     getSquare(point).setBackground(java.awt.Color.RED);
+        // System.out.println(point.getX() + " " + point.getY());
+        // getSquare(point).setBackground(java.awt.Color.RED);
         // }
         // System.err.println("Knight");
         // Pieces.Knight k = new Pieces.Knight(Color.WHITE, new GridPoint(0, 0));
         // for (GridPoint point : k.getValidMoves()) {
-        //     System.out.println(point.getX() + " " + point.getY());
+        // System.out.println(point.getX() + " " + point.getY());
         // }
     }
 

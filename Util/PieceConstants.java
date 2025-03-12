@@ -41,19 +41,31 @@ public class PieceConstants {
     }
 
     public class imageURLS {
-    public static final URI bRook = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/br.png");
-    public static final URI bKnight = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bn.png");
-    public static final URI bBishop = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bb.png");
-    public static final URI bQueen = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bq.png");
-    public static final URI bKing = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png");
-    public static final URI bPawn = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png");
+        public static final URI bRook = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/br.png");
+        public static final URI bKnight = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bn.png");
+        public static final URI bBishop = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bb.png");
+        public static final URI bQueen = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bq.png");
+        public static final URI bKing = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png");
+        public static final URI bPawn = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png");
 
-    public static final URI wRook = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wr.png");
-    public static final URI wKnight = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wn.png");
-    public static final URI wBishop = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wb.png");
-    public static final URI wQueen = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wq.png");
-    public static final URI wKing = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png");
-    public static final URI wPawn = URI.create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png");
-}
+        public static final URI wRook = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wr.png");
+        public static final URI wKnight = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wn.png");
+        public static final URI wBishop = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wb.png");
+        public static final URI wQueen = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wq.png");
+        public static final URI wKing = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png");
+        public static final URI wPawn = URI
+                .create("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png");
+    }
 
 }
